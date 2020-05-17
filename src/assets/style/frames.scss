@@ -1,0 +1,61 @@
+.fadeIn-enter-active[data], .fadeIn-leave-active[data] {
+    -webkit-transition: all 1s;
+    transition: all 1s;
+}
+.fadeIn-enter[data], .fadeIn-leave-to[data] {
+    opacity: 0;
+}
+@-webkit-keyframes du-data {
+    0% {
+        -webkit-transform: scale(1);
+        transform: scale(1);
+        opacity: .8;
+    }
+    50% {
+        -webkit-transform: scale(1.1);
+        transform: scale(1.1);
+        -webkit-filter: hue-rotate(30deg);
+        filter: hue-rotate(30deg);
+        opacity: .4;
+    }
+    to {
+        -webkit-transform: scale(1);
+        transform: scale(1);
+        opacity: .8;
+    }
+}
+@keyframes du-data {
+    0% {
+        -webkit-transform: scale(1);
+        transform: scale(1);
+        opacity: .8;
+    }
+    50% {
+        -webkit-transform: scale(1.1);
+        transform: scale(1.1);
+        -webkit-filter: hue-rotate(30deg);
+        filter: hue-rotate(30deg);
+        opacity: .4;
+    }
+    to {
+        -webkit-transform: scale(1);
+        transform: scale(1);
+        opacity: .8;
+    }
+}
+@-webkit-keyframes color-data {
+    from {
+        background-position: 0 0;
+    }
+    to {
+        background-position: 2000px 0;
+    }
+}
+@keyframes color-data {
+    from {
+        background-position: 0 0;
+    }
+    to {
+        background-position: 2000px 0;
+    }
+}
