@@ -1,22 +1,21 @@
 <template>
-    <header class="header">
-        <div class="navmove" ref="navmove"></div>
-        <slot name="language"></slot>
-        <ul class="nav fr" :class="{'active': menuBtn}">
-            <li
-                    v-for="(item, index) in navList"
+    <header class="header" :class="{isFixed: isFixed}">
+        <div class="logo">
+            <img src="@/assets/images/avatar.png" alt="">
+        </div>
+        <div class="nav_box">
+            <ul class="nav" :class="{'active': menuBtn}">
+                <li v-for="(item, index) in navList"
                     :key="index"
-                    :ref="index"
                     :class="{'active' : activeClass === index}"
-                    @mouseenter="handleMouseenter(index)"
-                    @mouseleave="handleMouseleave"
-                    @click="handleClick(index)"
-            >
-                <span>{{item.text}}</span>
-            </li>
-        </ul>
-        <div class="nav-btn fr" @click="menuBtnClick">
-            <i class="iconfont icon-menu"></i>
+                >
+                    {{item}}
+                </li>
+            </ul>
+            <slot name="language"></slot>
+            <div class="nav-btn">
+                <i class="iconfont icon-menu"></i>
+            </div>
         </div>
     </header>
 </template>
@@ -34,24 +33,13 @@
         },
         data() {
             return {
-                menuBtn: false, // 移动端菜单按钮
+                menuBtn: false,
                 isFixed: false,
-                onOff: true, // 避免快速点击阀门
-                activeClass: 0, // 选中的下标
-                flagIndex: 0, // 鼠标移出的下标
-                width: '',
-                left: '',
-                flagWidth: '',
-                flagLeft: ''
+                onOff: true,
+                activeClass: 0
             }
         },
         methods: {
-            handleMouseenter() {
-
-            },
-            handleMouseleave() {
-
-            },
             handleClick() {
 
             }
@@ -71,6 +59,57 @@
         &.fixed{
             @include fixedLeftTop(0,0);
             z-index: 9;
+        }
+        .logo{
+            @include widthHeight(55px,55px);
+            @include flexbox;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(0deg,rgba(64,158,255,.3) 0,rgba(125,150,69,.3));
+            border-radius: 50%;
+            transition: all 1s;
+            animation: music-data 6s infinite linear;
+            img{
+                width: 65%;
+            }
+        }
+        .nav_box{
+            .nav{
+                @include flexbox;
+                color: #fff;
+                font-size: 18px;
+                li{
+                    padding: 0 20px;
+                    cursor: pointer;
+                    &::before,&::after{
+                        display: inline-block;
+                        opacity: 0;
+                        transition:transform 0.3s, opacity 0.2s;
+                        -moz-transition:transform 0.3s, opacity 0.2s;
+                        -webkit-transition:transform 0.3s, opacity 0.2s;
+                    }
+                    &::before{
+                        content: '「';
+                        transform:translateX(20px);
+                        -webkit-transform:translateX(20px);
+                        -moz-transform:translateX(20px);
+                    }
+                    &::after{
+                        content: '」';
+                        transform:translateX(-20px);
+                        -webkit-transform:translateX(-20px);
+                        -moz-transform:translateX(-20px);
+                    }
+                    &:hover,&.active{
+                        &::before,&::after{
+                            opacity: 1;
+                            transform:translateX(0);
+                            -webkit-transform:translateX(0);
+                            -moz-transform:translateX(0);
+                        }
+                    }
+                }
+            }
         }
     }
 </style>

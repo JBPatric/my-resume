@@ -1,7 +1,7 @@
 <template>
     <div class="home">
         <banner :info="getData.welcome" />
-        <nav-header />
+        <nav-header :navList="getData.nav" />
         <about />
     </div>
 </template>

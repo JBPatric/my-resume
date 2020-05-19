@@ -59,3 +59,32 @@
         background-position: 2000px 0;
     }
 }
+
+@-webkit-keyframes music-data {
+    0% {
+        -webkit-filter: hue-rotate(0);
+        filter: hue-rotate(0);
+    }
+    50% {
+        -webkit-filter: hue-rotate(-180deg);
+        filter: hue-rotate(-180deg);
+    }
+    100% {
+        -webkit-filter: hue-rotate(0);
+        filter: hue-rotate(0);
+    }
+}
+@keyframes music-data {
+    0% {
+        -webkit-filter: hue-rotate(0);
+        filter: hue-rotate(0);
+    }
+    50% {
+        -webkit-filter: hue-rotate(-160deg);
+        filter: hue-rotate(-160deg);
+    }
+    100% {
+        -webkit-filter: hue-rotate(0);
+        filter: hue-rotate(0);
+    }
+}
