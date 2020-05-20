@@ -13,9 +13,7 @@
                 </li>
             </ul>
             <slot name="language"></slot>
-            <div class="nav-btn">
-                <i class="iconfont icon-menu"></i>
-            </div>
+            <div class="menu"></div>
         </div>
     </header>
 </template>
@@ -56,6 +54,7 @@
         align-items: center;
         padding: 0 20px;
         background: $blue;
+        color: #fff;
         &.fixed{
             @include fixedLeftTop(0,0);
             z-index: 9;
@@ -74,9 +73,10 @@
             }
         }
         .nav_box{
+            @include flexbox;
+            align-items: center;
             .nav{
                 @include flexbox;
-                color: #fff;
                 font-size: 18px;
                 li{
                     padding: 0 20px;
@@ -107,6 +107,37 @@
                             -webkit-transform:translateX(0);
                             -moz-transform:translateX(0);
                         }
+                    }
+                }
+            }
+            .menu{
+                @include widthHeight(30px,24px);
+                position: relative;
+                &::before,&::after{
+                    content: '';
+                    display: block;
+                    @include widthHeight(100%,3px);
+                    position: absolute;
+                    left: 0;
+                    background: #fff;
+                    transition: all .3s;
+                }
+                &::before{
+                    top: 0;
+                    box-shadow: 0 10px #fff;
+                }
+                &::after{
+                    bottom: 0;
+                }
+                &.expand{
+                    &::before{
+                        top: 10px;
+                        box-shadow: none;
+                        transform: rotate(225deg);
+                    }
+                    &::after{
+                        bottom: 11px;
+                        transform: rotate(135deg);
                     }
                 }
             }
