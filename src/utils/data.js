@@ -4,10 +4,12 @@ export const data = {
             "avatar": require("@/assets/images/avatar.png"),
             "banner": [
                 require("@/assets/images/banner/slide1.jpg"),
-                require("@/assets/images/banner/slide2.jpg")
+                require("@/assets/images/banner/slide2.jpg"),
+                require("@/assets/images/banner/slide3.jpg"),
+                require("@/assets/images/banner/slide4.jpg")
             ],
             "introduce": [
-                "刘忠奇(1993.10)",
+                "刘忠奇",
                 "一名前端开发工程师"
             ]
         },
@@ -20,10 +22,12 @@ export const data = {
             "avatar": require("@/assets/images/avatar.png"),
             "banner": [
                 require("@/assets/images/banner/slide1.jpg"),
-                require("@/assets/images/banner/slide2.jpg")
+                require("@/assets/images/banner/slide2.jpg"),
+                require("@/assets/images/banner/slide3.jpg"),
+                require("@/assets/images/banner/slide4.jpg")
             ],
             "introduce": [
-                "Liu Zhongqi(1993.10)",
+                "Liu Zhongqi",
                 "A front-end R & D engineer"
             ]
         },

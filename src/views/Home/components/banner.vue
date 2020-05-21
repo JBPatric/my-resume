@@ -5,7 +5,7 @@
                 v-for="(item, index) in info.banner"
                 v-show="index === currentIndex"
                 :key="item"
-                :style="{ backgroundImage: 'url(' + item + ')'}"
+                :style="{ backgroundImage: `url(${item})`}"
             ></li>
         </transition-group>
         <div class="info">
@@ -75,7 +75,7 @@
         position: relative;
         height: 100vh;
         text-align: center;
-        background: $blue;
+        background: $lightBlue;
         overflow: hidden;
         .banner_box{
             @include leftTop(0,0);
@@ -86,6 +86,7 @@
                 @include leftTop(0,0);
                 right: 0;
                 bottom: 0;
+                background-position: center;
                 &.active{
                     animation: du-data 5s .1s forwards;
                 }
@@ -125,11 +126,8 @@
             h1{
                 margin-bottom: 25px;
                 font-weight: 700;
-                font-size: 64px;
-                color: transparent;
-                background: linear-gradient(30deg,$lightBlue,#fff,$lightBlue);
-                -webkit-background-clip: text;
-                animation: color-data 7s linear infinite;
+                font-size: 48px;
+                color: #fff;
             }
             h3{
                 margin-bottom: 20px;
@@ -149,11 +147,6 @@
                 }
                 p,h3{
                     font-size: 20px;
-                }
-            }
-            @media (max-width: 420px) {
-                p,h3{
-                    font-size: 12px;
                 }
             }
         }

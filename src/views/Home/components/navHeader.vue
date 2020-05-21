@@ -13,7 +13,9 @@
                 </li>
             </ul>
             <slot name="language"></slot>
-            <div class="menu"></div>
+            <div class="menu">
+                <i class="icon"></i>
+            </div>
         </div>
     </header>
 </template>
@@ -64,7 +66,7 @@
             @include flexbox;
             justify-content: center;
             align-items: center;
-            background: linear-gradient(0deg,rgba(64,158,255,.3) 0,rgba(125,150,69,.3));
+            background: linear-gradient(0deg, rgba(7, 230, 255, 0.3) 0, rgba(23, 75, 211, 0.3));
             border-radius: 50%;
             transition: all 1s;
             animation: music-data 6s infinite linear;
@@ -113,32 +115,56 @@
             .menu{
                 @include widthHeight(30px,24px);
                 position: relative;
-                &::before,&::after{
-                    content: '';
-                    display: block;
-                    @include widthHeight(100%,3px);
-                    position: absolute;
-                    left: 0;
+                margin-left:20px;
+                display: none;
+                .icon{
+                    @include widthHeight(100%,4px);
+                    @include leftTop(0,13px);
                     background: #fff;
+                    border-radius: 2px;
                     transition: all .3s;
-                }
-                &::before{
-                    top: 0;
-                    box-shadow: 0 10px #fff;
-                }
-                &::after{
-                    bottom: 0;
-                }
-                &.expand{
+                    &::before,&::after{
+                        content: '';
+                        display: block;
+                        @include widthHeight(30px,4px);
+                        border-radius: 2px;
+                        position: absolute;
+                        left: 0;
+                        background: #fff;
+                        transition: all .3s;
+                    }
                     &::before{
-                        top: 10px;
-                        box-shadow: none;
-                        transform: rotate(225deg);
+                        top: -10px;
                     }
                     &::after{
-                        bottom: 11px;
-                        transform: rotate(135deg);
+                        top: 10px;
                     }
+                }
+                &.expand,&:hover{
+                    .icon{
+                        width: 0;
+                        &::before{
+                            transform: translateY(10px) rotate(45deg);
+                        }
+                        &::after{
+                            transform: translateY(-10px) rotate(-45deg);
+                        }
+                    }
+                }
+
+            }
+            @media (max-width: 800px) {
+                .avatar{
+                    @include widthHeight(150px,150px);
+                    img{
+                        width: 75px;
+                    }
+                }
+                .nav{
+                    display: none;
+                }
+                .menu{
+                    display: block;
                 }
             }
         }
