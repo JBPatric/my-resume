@@ -10,7 +10,7 @@ export const data = {
             ],
             "introduce": [
                 "刘忠奇",
-                "一名前端开发工程师"
+                "一个尽量少写代码的前端"
             ]
         },
         nav: [
@@ -28,7 +28,7 @@ export const data = {
             ],
             "introduce": [
                 "Liu Zhongqi",
-                "A front-end R & D engineer"
+                'A front-end that believe in "Less is more"'
             ]
         },
         nav: [
