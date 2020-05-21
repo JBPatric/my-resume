@@ -1,7 +1,8 @@
 <template>
     <header class="header" :class="{isFixed: isFixed}">
         <div class="logo">
-            <img src="@/assets/images/avatar.png" alt="">
+            <!--<img src="@/assets/images/avatar.png" alt="">-->
+            Patric
         </div>
         <div class="nav_box">
             <ul class="nav" :class="{'active': menuBtn}">
@@ -54,22 +55,21 @@
         @include flexbox;
         justify-content: space-between;
         align-items: center;
-        padding: 0 20px;
-        background: $blue;
-        color: #fff;
+        padding: 0 25px;
+        background: #fff;
+        color: #99A0B0;
         &.fixed{
             @include fixedLeftTop(0,0);
             z-index: 9;
         }
         .logo{
-            @include widthHeight(55px,55px);
+            @include widthHeight(80px,80px);
             @include flexbox;
             justify-content: center;
             align-items: center;
-            background: linear-gradient(0deg, rgba(7, 230, 255, 0.3) 0, rgba(23, 75, 211, 0.3));
-            border-radius: 50%;
             transition: all 1s;
             animation: music-data 6s infinite linear;
+            font-size: 2em;
             img{
                 width: 65%;
             }
@@ -103,6 +103,7 @@
                         -moz-transform:translateX(-20px);
                     }
                     &:hover,&.active{
+                        color: $orange;
                         &::before,&::after{
                             opacity: 1;
                             transform:translateX(0);
@@ -120,7 +121,7 @@
                 .icon{
                     @include widthHeight(100%,4px);
                     @include leftTop(0,13px);
-                    background: #fff;
+                    background: $grey;
                     border-radius: 2px;
                     transition: all .3s;
                     &::before,&::after{
@@ -130,7 +131,7 @@
                         border-radius: 2px;
                         position: absolute;
                         left: 0;
-                        background: #fff;
+                        background: $grey;
                         transition: all .3s;
                     }
                     &::before{

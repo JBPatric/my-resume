@@ -13,5 +13,6 @@
 <style lang="scss" scoped>
     .about{
         height: 600px;
+
     }
 </style>

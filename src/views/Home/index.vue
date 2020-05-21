@@ -43,10 +43,11 @@
         border-radius: 50%;
         line-height: 40px;
         text-align: center;
-        background: $lightBlue;
+        background: $orange;
         cursor: pointer;
         transition: opacity .25s;
         flex-shrink: 0;
+        color: #fff;
         &:hover{
             opacity: .85;
         }

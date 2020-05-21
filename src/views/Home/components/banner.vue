@@ -93,6 +93,7 @@
             }
         }
         .info{
+            color: #fff;
             .avatar{
                 position: relative;
                 @include widthHeight(180px,180px);
@@ -127,14 +128,13 @@
                 margin-bottom: 25px;
                 font-weight: 700;
                 font-size: 48px;
-                color: #fff;
             }
             h3{
+                font-size: 26px;
                 margin-bottom: 20px;
             }
-            p,h3{
-                color: #fff;
-                font-size: 24px;
+            p{
+                font-size: 22px;
             }
             @media (max-width: 980px) {
                 h1{
@@ -145,8 +145,11 @@
                 h1{
                     font-size: 36px;
                 }
-                p,h3{
-                    font-size: 20px;
+                h3{
+                    font-size: 22px;
+                }
+                p{
+                    font-size: 18px;
                 }
             }
         }
