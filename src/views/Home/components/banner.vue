@@ -1,13 +1,6 @@
 <template>
     <section class="banner">
-        <transition-group name="fadeIn" tag="ul" class="banner_box">
-            <li :class="{active: index === currentIndex}"
-                v-for="(item, index) in info.banner"
-                v-show="index === currentIndex"
-                :key="item"
-                :style="{ backgroundImage: `url(${item})`}"
-            ></li>
-        </transition-group>
+        <div class="banner-box"></div>
         <div class="info">
             <div class="avatar" data-aos="zoom-in-up">
                 <img :src="info.avatar" :alt="seoText" />
@@ -75,22 +68,17 @@
         position: relative;
         height: 100vh;
         text-align: center;
-        background: $lightBlue;
-        overflow: hidden;
-        .banner_box{
+        .banner-box{
             @include leftTop(0,0);
-            right: 0;
-            bottom: 0;
-            height: 100vh;
-            li{
-                @include leftTop(0,0);
-                right: 0;
-                bottom: 0;
-                background-position: center;
-                &.active{
-                    animation: du-data 5s .1s forwards;
-                }
-            }
+            @include widthHeight(100%,100%);
+            -webkit-filter: blur(20px);
+            filter: blur(20px);
+            background: linear-gradient(-45deg, #23a6d5, #34d5ac, #4beee9);
+            background-size: 400%;
+            -webkit-animation: gradient 8.5s ease-in-out infinite;
+            animation: gradient 8.5s ease-in-out infinite;
+            overflow: hidden;
+            z-index: 0;
         }
         .info{
             color: #fff;
@@ -128,6 +116,7 @@
                 margin-bottom: 25px;
                 font-weight: 700;
                 font-size: 48px;
+                letter-spacing: -3px;
             }
             h3{
                 font-size: 26px;
@@ -143,7 +132,7 @@
             }
             @media (max-width: 768px) {
                 h1{
-                    font-size: 36px;
+                    font-size: 32px;
                 }
                 h3{
                     font-size: 22px;

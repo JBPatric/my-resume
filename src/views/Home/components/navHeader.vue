@@ -9,9 +9,7 @@
                 <li v-for="(item, index) in navList"
                     :key="index"
                     :class="{'active' : activeClass === index}"
-                >
-                    {{item}}
-                </li>
+                >{{item}}</li>
             </ul>
             <slot name="language"></slot>
             <div class="menu">
@@ -41,9 +39,7 @@
             }
         },
         methods: {
-            handleClick() {
 
-            }
         }
 
     }
@@ -51,13 +47,16 @@
 
 <style lang="scss" scoped>
     .header{
+        position: relative;
+        z-index: 1;
         @include widthHeight(100%,80px);
         @include flexbox;
         justify-content: space-between;
         align-items: center;
         padding: 0 25px;
-        background: #fff;
-        color: #99A0B0;
+        background: $black;
+        color: $grey;
+        border-bottom: 1px solid #383838;
         &.fixed{
             @include fixedLeftTop(0,0);
             z-index: 9;
@@ -70,18 +69,17 @@
             transition: all 1s;
             animation: music-data 6s infinite linear;
             font-size: 2em;
-            img{
-                width: 65%;
-            }
+            letter-spacing: -3px;
         }
         .nav_box{
             @include flexbox;
             align-items: center;
+            height: 100%;
             .nav{
                 @include flexbox;
                 font-size: 18px;
                 li{
-                    padding: 0 20px;
+                    padding: 0 5px;
                     cursor: pointer;
                     &::before,&::after{
                         display: inline-block;
@@ -103,7 +101,7 @@
                         -moz-transform:translateX(-20px);
                     }
                     &:hover,&.active{
-                        color: $orange;
+                        color: $blue;
                         &::before,&::after{
                             opacity: 1;
                             transform:translateX(0);
@@ -114,7 +112,7 @@
                 }
             }
             .menu{
-                @include widthHeight(30px,24px);
+                @include widthHeight(30px,30px);
                 position: relative;
                 margin-left:20px;
                 display: none;

@@ -1,12 +1,13 @@
 <template>
     <div class="home">
         <banner :info="getData.welcome" />
-        <nav-header :navList="getData.nav">
+        <nav-header :navList="getData.nav" :isFixed="isFixed">
             <template slot="language">
                 <div class="language" @click="changeLanguage" :title="isChinese ? 'To English' : '简体中文'">{{isChinese ? 'EN' : 'CN'}}</div>
             </template>
         </nav-header>
-        <about />
+        <about :info="getData.about" />
+        <skill :info="getData.skill" />
     </div>
 </template>
 
@@ -21,7 +22,9 @@
         data() {
             return {
                 data,
-                isChinese: true
+                isChinese: true,
+                toTop: false,
+                isFixed: false
             }
         },
         computed: {
@@ -32,6 +35,15 @@
         methods: {
             changeLanguage() {
                 this.isChinese = !this.isChinese
+            },
+            handleScroll () {
+                // 获取滚动的距离
+                let scrollTop = document.documentElement.scrollTop || window.pageYOffset || document.body.scrollTop
+                let contentDom = document.querySelector('.js-container')
+                // 返回顶部显示隐藏
+                scrollTop > document.documentElement.clientHeight / 2 ? this.toTop = true : this.toTop = false
+                // 导航吸顶
+                this.isFixed =  scrollTop > contentDom[0].offsetTop - 81
             }
         }
     }
@@ -39,15 +51,13 @@
 
 <style lang="scss" scoped>
     .language{
-        @include widthHeight(40px,40px);
+        height: 80px;
+        line-height: 80px;
         border-radius: 50%;
-        line-height: 40px;
         text-align: center;
-        background: $orange;
         cursor: pointer;
         transition: opacity .25s;
         flex-shrink: 0;
-        color: #fff;
         &:hover{
             opacity: .85;
         }

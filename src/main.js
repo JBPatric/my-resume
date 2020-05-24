@@ -1,6 +1,7 @@
 import Vue from 'vue'
 import App from './App.vue'
 import AOS from 'aos';
+import '@/assets/fonts/font.css'
 import '@/assets/style/reset.scss'
 import 'aos/dist/aos.css';
 

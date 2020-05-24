@@ -1,8 +1,10 @@
 @charset "UTF-8";
-$blue:#2B313D;
-$grey: #99A0B0;
+$blue: #00a6f1;
+$grey: #7b959c;
+$black: #232323;
 $orange: #F06661;
 $lightBlue: #3dcffb;
+
 @mixin transform($transforms) {
     -webkit-transform: $transforms;
     -moz-transform: $transforms;

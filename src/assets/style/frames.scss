@@ -5,6 +5,24 @@
 .fadeIn-enter[data], .fadeIn-leave-to[data] {
     opacity: 0;
 }
+@-webkit-keyframes gradient {
+    0%,100% {
+        background-position: 0 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+}
+
+@keyframes gradient {
+    0%,100% {
+        background-position: 0 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+}
+
 @-webkit-keyframes du-data {
     0% {
         -webkit-transform: scale(1);
