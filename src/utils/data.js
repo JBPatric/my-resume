@@ -92,7 +92,7 @@ export const data = {
                     title: 'INFORMATION',
                     content: `
                         <p>Liu Zhongqi/Male</p>
-                        <p>Age:27工作4年</p>
+                        <p>Age:27/Work for 4 years</p>
                     `
                 },
                 {
