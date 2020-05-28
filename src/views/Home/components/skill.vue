@@ -6,10 +6,9 @@
                 <li>
                     <div class="img-box">
                         <img src="~@/assets/images/icon/html.png" alt="">
-                        <h4>html</h4>
                     </div>
                     <div class="skill-wrap">
-
+                        <h4>HTML</h4>
                     </div>
                 </li>
                 <li>
@@ -44,38 +43,44 @@
             @include flexbox;
             flex-wrap: wrap;
             justify-content: space-between;
+            align-items:flex-start;
             margin-top: 60px;
             li{
                 position: relative;
-                @include widthHeight(48%,350px);
-                padding: 15px;
+                @include widthHeight(250px);
                 margin-bottom: 30px;
                 box-shadow: 7px 7px 24px rgba(0, 0, 0, 0.15);
                 .img-box{
-                    @include leftTop(0,0);
-                    z-index: 2;
-                    @include widthHeight(100%,100%);
+                    @include widthHeight(100%,220px);
                     @include flexbox;
                     flex-direction: column;
                     justify-content: center;
                     align-items: center;
-                    transition: .35s ease-in-out;
-                    img{
-                        @include widthHeight(100px,100px);
-                    }
-                    h4{
-                        @include leftBottom(0,0);
-                        z-index: 0;
-                        @include widthHeight(100%,45%);
-                        opacity: .2;
-                        text-align: center;
-                        font-size: 5em;
-                        font-weight: 600;
-                    }
+                    transition: height .45s;
+                    background: #eb6c3f;
+                    overflow: hidden;
                 }
                 .skill-wrap{
-                    @include widthHeight(100%,100%);
-
+                    @include widthHeight(100%,60px);
+                    line-height: 60px;
+                    padding: 0 20px;
+                    text-align: left;
+                    overflow: hidden;
+                    transition: height .45s;
+                    h4{
+                        font-size: 1.4em;
+                        font-weight: 600;
+                        text-transform: uppercase;
+                        color: $black;
+                    }
+                }
+                &:hover{
+                    .img-box{
+                        height: 30px;
+                    }
+                    .skill-wrap{
+                        height: 250px;
+                    }
                 }
             }
         }

@@ -3,7 +3,7 @@
         <div class="content">
             <common-title data-aos="fade-up" data-aos-delay="150" :title="info.title" :subTitle="info.subTitle"></common-title>
             <ul class="basic-info">
-                <li v-for="(item,index) of info.infos" :key="item.id" data-aos="fade-in" :data-aos-delay="300 * (index+1)">
+                <li v-for="(item,index) of info.infos" :key="item.id" data-aos="zoom-in" :data-aos-delay="100 * index">
                     <i :class="'icon-'+(index+1)"></i>
                     <h4>{{item.title}}</h4>
                     <div v-html="item.content"></div>
